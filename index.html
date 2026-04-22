@@ -3,6 +3,8 @@
 <head>
   <title>Daksh Portfolio</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -63,6 +65,7 @@
       font-size: 16px;
     }
 
+
     /* TYPEWRITER CURSOR */
     #typing::after {
       content: "|";
@@ -94,36 +97,146 @@
       transform: scale(1.05);
     }
 
-  </style>
+    .socials {
+  margin-top: 30px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #a855f7;
+  transition: 0.3s;
+}
+
+.icon a:hover {
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+  box-shadow: 0 0 20px #a855f7;
+  transform: scale(1.1);
+}
+
+.icon i {
+  font-size: 20px;
+}
+
+/* HOVER LABEL */
+.icon span {
+  position: absolute;
+  bottom: -25px;
+  background: #111;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+
+.icon:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
 
   <div class="hero">
-    <h1>Daksh Pradhwani</h1>
+  
 
-    <h2>
-      I am a <span id="typing"></span>
-    </h2>
+  <h1>Daksh Pradhwani</h1>
 
-    <p>
-      A passionate future AI developer from India, building cool things with code and creativity.
-    </p>
+  <h2>
+    I am a <span id="typing"></span>
+  </h2>
 
-    <div class="buttons">
-      <a href="#" class="btn">View Projects</a>
-      <a href="#" class="btn">Contact Me</a>
-    </div>
+  <p>
+    A passionate future AI developer from India, building cool things with code and creativity.
+  </p>
+
+  <div class="buttons">
+    <a href="#" class="btn">View Projects</a>
+    <a href="#contact" class="btn">Contact Me</a>
   </div>
+
+  <!-- SOCIAL ICONS -->
+  <div class="socials">
+
+    <div class="icon">
+      <a href="https://github.com/D4kshP" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <span>GitHub</span>
+    </div>
+
+    <div class="icon">
+      <a href="https://instagram.com/btw.dakshp" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <span>Instagram</span>
+    </div>
+
+    <div class="icon">
+      <a href="mailto:daksh.pradhwani@gmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <span>Email</span>
+    </div>
+
+  </div>
+
+</div>
+
+  </style>
+</head>
+
+</div>
+
+  <div id="contact" style="margin-top: 100px; text-align:center;">
+  <h2>Contact Me</h2>
+
+  <form action="https://formspree.io/f/mgorpevp" method="POST" style="max-width:400px; margin:auto;">
+    
+    <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;">
+    
+    <input type="email" name="email" placeholder="Your Gmail" required style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;">
+    
+    <textarea name="message" placeholder="Your Message" required style="width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;"></textarea>
+    
+    <button type="submit" style="padding:10px 20px; background:#a855f7; border:none; border-radius:8px; color:white;">
+      Send Message
+    </button>
+
+  </form>
+</div>
 
   <!-- TYPEWRITER SCRIPT -->
   <script>
     const roles = [
       "AI Developer",
-      "Lead Guitarist 🎸",
-      "Avid Reader 📚",
-      "Future Innovator 🚀",
-      "Tech Explorer 💻"
+      "Lead Guitarist ",
+      "Avid Reader ",
+      "Future Innovator ",
+      "Tech Explorer "
+      
     ];
 
     let index = 0;
