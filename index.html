@@ -3,146 +3,95 @@
 <head>
   <title>Daksh Portfolio</title>
 
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial;
-      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, #0f172a, #020617);
+      background: black;
       color: white;
+      overflow: hidden;
     }
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 40px;
-      background: rgba(0,0,0,0.5);
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-    }
-
-    nav h1 {
-      color: #38bdf8;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
+    /* STAR BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url("https://www.transparenttextures.com/patterns/stardust.png");
+      opacity: 0.3;
+      z-index: -1;
     }
 
     /* HERO */
     .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 100px 20px;
-      animation: fadeIn 2s ease;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 70px;
+      font-weight: 600;
+      background: linear-gradient(90deg, #a855f7, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero h2 {
-      font-size: 45px;
-      color: #38bdf8;
+      font-size: 28px;
+      margin-top: 15px;
+      color: #c084fc;
     }
 
     .hero p {
-      margin-top: 10px;
-      font-size: 18px;
+      margin-top: 20px;
+      max-width: 600px;
+      color: #aaa;
+      font-size: 16px;
     }
 
-    /* SECTIONS */
-    .section {
-      padding: 60px 20px;
-      text-align: center;
+    /* TYPEWRITER CURSOR */
+    #typing::after {
+      content: "|";
+      animation: blink 1s infinite;
     }
 
-    .section h2 {
-      margin-bottom: 20px;
-      color: #38bdf8;
+    @keyframes blink {
+      50% { opacity: 0; }
     }
 
-    /* PROJECT CARDS */
-    .projects {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      background: #1e293b;
-      margin: 20px;
-      padding: 20px;
-      width: 280px;
-      border-radius: 15px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 10px 30px rgba(56,189,248,0.3);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
+    /* BUTTONS */
+    .buttons {
+      margin-top: 30px;
     }
 
     .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #38bdf8;
-      color: black;
-      border-radius: 8px;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 30px;
       text-decoration: none;
+      color: white;
+      border: 1px solid #a855f7;
       transition: 0.3s;
     }
 
     .btn:hover {
-      background: white;
-    }
-
-    /* CONTACT FORM */
-    form {
-      max-width: 400px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-    }
-
-    input, textarea {
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-    }
-
-    button {
-      padding: 10px;
-      background: #38bdf8;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: white;
-    }
-
-    /* ANIMATION */
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      background: linear-gradient(90deg, #a855f7, #6366f1);
+      box-shadow: 0 0 20px #a855f7;
+      transform: scale(1.05);
     }
 
   </style>
@@ -150,56 +99,65 @@
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h1>Daksh</h1>
-    <div>
-      <a href="#">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
   <div class="hero">
-    <h2>Hello, I’m Daksh 👋</h2>
-    <p>Future AI Developer 🚀</p>
-  </div>
+    <h1>Daksh Pradhwani</h1>
 
-  <!-- PROJECTS -->
-  <div class="section" id="projects">
-    <h2>My Projects</h2>
+    <h2>
+      I am a <span id="typing"></span>
+    </h2>
 
-    <div class="projects">
+    <p>
+      A passionate future AI developer from India, building cool things with code and creativity.
+    </p>
 
-      <div class="card">
-        <img src="https://via.placeholder.com/300">
-        <h3>My First Website</h3>
-        <p>My personal portfolio built with HTML & CSS.</p>
-        <a href="#" class="btn">View</a>
-      </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/300">
-        <h3>Coming Soon</h3>
-        <p>More projects will be added here.</p>
-        <a href="#" class="btn">View</a>
-      </div>
-
+    <div class="buttons">
+      <a href="#" class="btn">View Projects</a>
+      <a href="#" class="btn">Contact Me</a>
     </div>
   </div>
 
-  <!-- CONTACT -->
-  <div class="section" id="contact">
-    <h2>Contact Me</h2>
+  <!-- TYPEWRITER SCRIPT -->
+  <script>
+    const roles = [
+      "AI Developer",
+      "Lead Guitarist 🎸",
+      "Avid Reader 📚",
+      "Future Innovator 🚀",
+      "Tech Explorer 💻"
+    ];
 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+    let index = 0;
+    let charIndex = 0;
+    let currentText = "";
+    let isDeleting = false;
+
+    function type() {
+      let fullText = roles[index];
+
+      if (isDeleting) {
+        currentText = fullText.substring(0, charIndex--);
+      } else {
+        currentText = fullText.substring(0, charIndex++);
+      }
+
+      document.getElementById("typing").textContent = currentText;
+
+      let speed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === fullText.length) {
+        isDeleting = true;
+        speed = 1200; // pause before deleting
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % roles.length;
+        speed = 400;
+      }
+
+      setTimeout(type, speed);
+    }
+
+    type();
+  </script>
 
 </body>
 </html>
